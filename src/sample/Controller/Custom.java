@@ -1,6 +1,7 @@
 package sample.Controller;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Custom {
     private String name;
@@ -8,12 +9,12 @@ public class Custom {
     private String address;
     private String gender;
     private String phoneNumber;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private Date startDate;
+    private Date endDate;
     public Custom() {
     }
 
-    public Custom( String name, int age, String address, String gender, String phoneNumber,LocalDate startDate,LocalDate endDate) {
+    public Custom( String name, int age, String address, String gender, String phoneNumber,Date startDate,Date endDate) {
         this.name = name;
         this.age = age;
         this.address = address;
@@ -63,24 +64,24 @@ public class Custom {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
     public int date(){
-        return endDate.getDayOfYear()-startDate.getDayOfYear();
+        return (int)( (endDate.getTime() -startDate.getTime()) / (1000 * 60 * 60 * 24));
     }
 
     @Override
