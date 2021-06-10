@@ -24,13 +24,4 @@ public class ManagerCustom {
         listCustom.add(custom);
     }
 
-    public void display() {
-        for (Custom custom : listCustom) {
-            System.out.println(custom);
-        }
-    }
-
-
-
-
 }

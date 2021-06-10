@@ -9,19 +9,19 @@ public class Custom {
     private String address;
     private String gender;
     private String phoneNumber;
-    private Date startDate;
-    private Date endDate;
+    private String cmnd;
+
     public Custom() {
     }
 
-    public Custom( String name, int age, String address, String gender, String phoneNumber,Date startDate,Date endDate) {
+    public Custom(String name, int age, String address, String gender, String phoneNumber, String cmnd) {
         this.name = name;
         this.age = age;
         this.address = address;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.cmnd = cmnd;
+
     }
 
     public String getName() {
@@ -64,34 +64,25 @@ public class Custom {
         this.phoneNumber = phoneNumber;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public String getCmnd() {
+        return cmnd;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setCmnd(String cmnd) {
+        this.cmnd = cmnd;
     }
 
-    public Date getEndDate() {
-        return endDate;
-    }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public int date(){
-        return (int)( (endDate.getTime() -startDate.getTime()) / (1000 * 60 * 60 * 24));
-    }
 
     @Override
     public String toString() {
-        return "Khách hàng{" +
+        return "\n"+"Khách hàng{" +
                 "tên: " + name +
                 ", tuổi : " + age +
                 ", địa chỉ : " + address +
                 ", giới tính : " + gender +
                 ", số điện thoại : " + phoneNumber +
+                ", CMND : " + cmnd +
                 '}';
     }
 }
