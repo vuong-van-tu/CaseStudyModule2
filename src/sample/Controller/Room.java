@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Room {
     //    List<Custom> customs = new ArrayList<Custom>();
-    Custom customs = new Custom();
+    private Custom customs = new Custom();
     private final String ROOM_A = "A";
     private final String ROOM_B = "B";
     private final int PRICE_A = 2000000;
@@ -13,14 +13,24 @@ public class Room {
     private String category;
     private int price;
     private String idRoom;
+    private boolean status = false;
 
-    public Room(String category, int price, String idRoom) {
+    public Room(String category, int price, String idRoom,Boolean status) {
         this.category = category;
         this.price = price;
         this.idRoom = idRoom;
+        this.status = status;
     }
 
     public Room() {
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public int getPrice() {

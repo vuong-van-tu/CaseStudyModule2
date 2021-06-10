@@ -26,7 +26,7 @@ public class ManagerEmployee {
 
     public void display() {
         for (Employee nv : listEmployee) {
-            System.out.println(nv);
+                System.out.println(nv);
         }
     }
 
