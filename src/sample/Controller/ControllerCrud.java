@@ -53,6 +53,8 @@ public class ControllerCrud implements Initializable {
     private TableColumn<Custom,String> cmnd;
     @FXML
     private Button delete;
+    @FXML
+    private TextField ipdelete;
 
     ObservableList<Custom> listCus = FXCollections.observableArrayList();
 
@@ -63,7 +65,10 @@ public class ControllerCrud implements Initializable {
     public void edit(ActionEvent event){
         System.out.println(listCus);
     }
-
+    public void delete(ActionEvent event){
+        listCus.removeIf(custom -> ipdelete.getText().equals(custom.getCmnd()));
+//        System.out.println(listCus);
+    }
 
 
     @Override

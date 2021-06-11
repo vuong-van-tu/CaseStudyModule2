@@ -16,7 +16,7 @@
             <TableColumn fx:id="cmnd" prefWidth="147.2000732421875" text="CMND" />
         </columns>
       </TableView>
-      <AnchorPane layoutX="14.0" layoutY="8.0" prefHeight="353.0" prefWidth="319.0">
+      <AnchorPane layoutX="14.0" prefHeight="487.0" prefWidth="319.0">
          <children>
             <VBox layoutX="8.0" layoutY="69.0" prefHeight="234.0" prefWidth="103.0" spacing="10.0">
                <children>
@@ -63,13 +63,15 @@
                </children>
             </VBox>
             <Button fx:id="add" layoutX="14.0" layoutY="314.0" mnemonicParsing="false" onAction="#add" text="Thêm" />
-            <Button fx:id="edit" layoutX="121.0" layoutY="313.0" mnemonicParsing="false" onAction="#edit" prefHeight="26.0" prefWidth="54.0" text="Sửa" />
-            <Button fx:id="delete" layoutX="232.0" layoutY="313.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Xóa" />
+            <Button fx:id="edit" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" onAction="#edit" prefHeight="26.0" prefWidth="46.0" text="Sửa" />
+            <Button fx:id="delete" layoutX="176.0" layoutY="423.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="62.0" text="Xóa" />
             <Label alignment="BOTTOM_CENTER" layoutX="57.0" layoutY="6.0" prefHeight="31.0" prefWidth="182.0" text="INPUT" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
+            <Label layoutX="14.0" layoutY="393.0" prefHeight="30.0" prefWidth="182.0" text="Delete Fund by CMND : " />
+            <TextField fx:id="ipdelete" layoutX="14.0" layoutY="423.0" prefHeight="26.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>
