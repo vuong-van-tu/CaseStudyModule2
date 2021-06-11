@@ -1,4 +1,4 @@
-package sample.Controller;
+package sample.Code;
 
 public class Employee {
     private String id;

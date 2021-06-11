@@ -1,8 +1,8 @@
-package sample.Controller;
+package sample.Code;
+
+import sample.Code.Custom;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class ManagerCustom {

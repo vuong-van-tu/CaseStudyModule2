@@ -1,4 +1,6 @@
-package sample.Controller;
+package sample.Code;
+
+import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -11,7 +13,7 @@ public class Custom {
     private String phoneNumber;
     private String cmnd;
 
-    public Custom() {
+    public Custom(String text, int age, String ipaddressText, ObservableList items, String ipnumberphoneText, String ipcmndText) {
     }
 
     public Custom(String name, int age, String address, String gender, String phoneNumber, String cmnd) {

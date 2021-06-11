@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ControllerCrud">
+   <children>
+      <TableView fx:id="tableCus" layoutX="334.0" layoutY="1.0" prefHeight="658.0" prefWidth="619.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="75.0" text="Tên" />
+          <TableColumn fx:id="age" prefWidth="75.0" text="Tuổi" />
+            <TableColumn fx:id="address" prefWidth="140.800048828125" text="Địa chỉ" />
+            <TableColumn fx:id="gender" prefWidth="55.199951171875" text="Giới tính" />
+            <TableColumn fx:id="numberPhone" prefWidth="125.5999755859375" text="Số điện thoại" />
+            <TableColumn fx:id="cmnd" prefWidth="147.2000732421875" text="CMND" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="14.0" layoutY="8.0" prefHeight="353.0" prefWidth="319.0">
+         <children>
+            <VBox layoutX="8.0" layoutY="69.0" prefHeight="234.0" prefWidth="103.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="166.0" text="Tên :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="30.0" prefWidth="170.0" text="Tuổi :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="30.0" prefWidth="167.0" text="Địa chỉ : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="32.0" prefWidth="103.0" text="Giới tính : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="31.0" prefWidth="103.0" text="Số điện thoại :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="31.0" prefWidth="84.0" text="CMND : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="101.0" layoutY="72.0" prefHeight="228.0" prefWidth="213.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="ipname" prefHeight="30.0" prefWidth="223.0" />
+                  <TextField fx:id="ipage" prefHeight="31.0" />
+                  <TextField fx:id="ipaddress" prefHeight="31.0" />
+                  <ChoiceBox fx:id="ipgender" prefWidth="150.0" />
+                  <TextField fx:id="ipnumberphone" prefHeight="31.0" />
+                  <TextField fx:id="ipcmnd" prefHeight="31.0" />
+               </children>
+            </VBox>
+            <Button fx:id="add" layoutX="14.0" layoutY="314.0" mnemonicParsing="false" onAction="#add" text="Thêm" />
+            <Button fx:id="edit" layoutX="121.0" layoutY="313.0" mnemonicParsing="false" onAction="#edit" prefHeight="26.0" prefWidth="54.0" text="Sửa" />
+            <Button fx:id="delete" layoutX="232.0" layoutY="313.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Xóa" />
+            <Label alignment="BOTTOM_CENTER" layoutX="57.0" layoutY="6.0" prefHeight="31.0" prefWidth="182.0" text="INPUT" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
