@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
+import java.util.function.UnaryOperator;
 
 
 public class ControllerCrud implements Initializable {
@@ -55,6 +56,9 @@ public class ControllerCrud implements Initializable {
     private Button delete;
     @FXML
     private TextField ipdelete;
+    @FXML
+            private TextField ipedit;
+
 
     ObservableList<Custom> listCus = FXCollections.observableArrayList();
 
@@ -63,13 +67,16 @@ public class ControllerCrud implements Initializable {
 
     }
     public void edit(ActionEvent event){
-        System.out.println(listCus);
+        for (Custom cus:listCus) {
+            if (ipedit.getText().equals(cus.getCmnd())){
+                listCus.removeIf(custom -> ipedit.getText().equals(custom.getCmnd()));
+                listCus.add(new Custom(ipname.getText(),Integer.parseInt(ipage.getText()),ipaddress.getText(), (String) ipgender.getValue(),ipnumberphone.getText(),ipcmnd.getText()));
+            }
+        }
     }
     public void delete(ActionEvent event){
         listCus.removeIf(custom -> ipdelete.getText().equals(custom.getCmnd()));
-//        System.out.println(listCus);
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
