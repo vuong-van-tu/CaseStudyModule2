@@ -7,20 +7,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import sample.Code.Custom;
-import sample.Code.Gender;
-import sun.plugin2.applet.FXAppletSecurityManager;
+import sample.Service.Custom;
 
-import javax.swing.*;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.*;
-import java.util.function.UnaryOperator;
 
 
-public class ControllerCrud implements Initializable {
+public class ControllerCustomer implements Initializable {
     private Label label;
     @FXML
     private TextField ipname;
@@ -78,7 +71,7 @@ public class ControllerCrud implements Initializable {
 
     ObservableList<Custom> listCus = FXCollections.observableArrayList();
 
-    public ControllerCrud() {
+    public ControllerCustomer() {
         listCus.add(new Custom("Tú",20,"Hà Nội","Nam","0338376563","033201005564"));
         listCus.add(new Custom("Tú",27,"Hưng Yên","Nam","0334319874","033225122001"));
         listCus.add(new Custom("Chiến",25,"Hà Nội 2","Nam","0345989349","109309435783"));

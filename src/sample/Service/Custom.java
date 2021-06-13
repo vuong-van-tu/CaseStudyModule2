@@ -1,9 +1,6 @@
-package sample.Code;
+package sample.Service;
 
 import javafx.collections.ObservableList;
-
-import java.time.LocalDate;
-import java.util.Date;
 
 public class Custom {
     private String name;

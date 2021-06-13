@@ -1,6 +1,4 @@
-package sample.Code;
-
-import sample.Code.Hotel;
+package sample.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

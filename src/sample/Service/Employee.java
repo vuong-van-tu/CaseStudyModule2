@@ -1,4 +1,4 @@
-package sample.Code;
+package sample.Service;
 
 public class Employee {
     private String id;

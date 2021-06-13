@@ -1,4 +1,4 @@
-package sample.Code;
+package sample.Service;
 
 import java.util.ArrayList;
 import java.util.List;
