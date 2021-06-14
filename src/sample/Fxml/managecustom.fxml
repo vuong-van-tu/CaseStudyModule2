@@ -105,5 +105,6 @@
       <TextField fx:id="ipfind" layoutX="31.0" layoutY="509.0" prefHeight="26.0" prefWidth="170.0" />
       <Label layoutX="31.0" layoutY="479.0" prefHeight="26.0" prefWidth="194.0" text="Find by Name" />
       <Button layoutX="230.0" layoutY="509.0" mnemonicParsing="false" onAction="#find" prefHeight="26.0" prefWidth="103.0" text="Tìm kiếm" />
+      <Button layoutX="40.0" layoutY="585.0" mnemonicParsing="false" onAction="#back" text="Back" />
    </children>
 </AnchorPane>

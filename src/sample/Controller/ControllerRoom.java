@@ -59,12 +59,13 @@ public class ControllerRoom implements Initializable {
                 Scene scene = new Scene(myPane);
                 stage.setScene(scene);
             }
+
         });
         button2 = new Button("Room2");
         button2.setOnAction(event -> {
             if (!status.getText().equals("Trống")){
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustom.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustomroom2.fxml"));
                 Pane myPane = null;
                 try {
                     myPane = (Pane) loader.load();
@@ -79,7 +80,7 @@ public class ControllerRoom implements Initializable {
         button3.setOnAction(event -> {
             if (!status.getText().equals("Trống")){
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustom.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustomroom3.fxml"));
                 Pane myPane = null;
                 try {
                     myPane = (Pane) loader.load();
@@ -94,7 +95,7 @@ public class ControllerRoom implements Initializable {
         button4.setOnAction(event -> {
             if (!status.getText().equals("Trống")){
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustom.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustomroom4.fxml"));
                 Pane myPane = null;
                 try {
                     myPane = (Pane) loader.load();

@@ -31,7 +31,6 @@ public class UserLogin implements Initializable {
     @FXML
     TextField ippassword;
     RegisterUser register = new RegisterUser();
-    List<Account> list = register.accounts();
     public void setUser(ActionEvent event) throws IOException {
         Stage stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader1 = new FXMLLoader();

@@ -55,7 +55,7 @@ public class Room {
             long millis = date2.getTime() - date1.getTime();
             date = (millis / (24 * 60 * 60 * 1000) + 1);
         } catch (ParseException e) {
-            System.out.println("Phòng trống!!!");
+//            System.out.println("");
         }
         return date;
     }

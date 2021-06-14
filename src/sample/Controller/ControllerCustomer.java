@@ -4,11 +4,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import sample.FileIO.ReadFile;
+import sample.FileIO.WriteFile;
 import sample.Service.Custom;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -69,13 +77,14 @@ public class ControllerCustomer implements Initializable {
     private TextField ipfind;
 
 
-    ObservableList<Custom> listCus = FXCollections.observableArrayList();
+    ObservableList<Custom> listCus;
 
     public ControllerCustomer() {
-        listCus.add(new Custom("Tú",20,"Hà Nội","Nam","0338376563","033201005564"));
-        listCus.add(new Custom("Tú",27,"Hưng Yên","Nam","0334319874","033225122001"));
-        listCus.add(new Custom("Chiến",25,"Hà Nội 2","Nam","0345989349","109309435783"));
-        listCus.add(new Custom("Chương",29,"Nam Định","Nam","0338390843","913940928329"));
+        try {
+            listCus = ReadFile.readAccountCSVFile("D:\\CaseStudyModule2\\src\\sample\\file.csv");
+        } catch (IOException e) {
+            listCus =FXCollections.observableArrayList() ;
+        }
     }
 
     public void add(ActionEvent event){
@@ -125,5 +134,14 @@ public class ControllerCustomer implements Initializable {
         cmnd.setCellValueFactory(new PropertyValueFactory<>("cmnd"));
         tableCus.setItems(listCus);
 
+    }
+
+    public void back(ActionEvent event) throws IOException {
+        Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader =new FXMLLoader(getClass().getResource("../Fxml/manageroom.fxml"));
+        Pane myPane = (Pane) loader.load();
+        Scene scene = new Scene(myPane);
+        stage.setScene(scene);
+        WriteFile.writeFileCustomer("D:\\CaseStudyModule2\\src\\sample\\file.csv",listCus);
     }
 }
