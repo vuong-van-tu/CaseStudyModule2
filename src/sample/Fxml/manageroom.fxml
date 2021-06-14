@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.Controller.ControllerRoom"
-            prefHeight="800.0" prefWidth="1000.0">
 
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ControllerRoom">
+   <children>
+      <TableView fx:id="tableRoom" prefHeight="800.0" prefWidth="1000.0">
+        <columns>
+          <TableColumn text=" " />
+          <TableColumn fx:id="status" prefWidth="150.0" text="Trạng thái" />
+            <TableColumn fx:id="idRoom" prefWidth="150.0" text="Số phòng" />
+            <TableColumn fx:id="category" prefWidth="150.0" text="Loại phòng" />
+            <TableColumn fx:id="startDate" prefWidth="150.0" text="Ngày bắt đầu thuê" />
+            <TableColumn fx:id="endDate" prefWidth="150.0" text="Ngày trả phòng" />
+            <TableColumn fx:id="price" prefWidth="167.2000732421875" text="Giá phòng" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

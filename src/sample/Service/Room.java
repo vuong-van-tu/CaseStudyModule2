@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Room {
-    private boolean status ;
+    private BooleanRoom status ;
     private String idRoom;
     private String category;
     private final int PRICE_A = 2000000;
@@ -17,7 +17,7 @@ public class Room {
     public Room() {
     }
 
-    public Room(boolean status, String idRoom, String category,String startDate,String endDate) {
+    public Room(BooleanRoom status, String idRoom, String category,String startDate,String endDate) {
         this.status = status;
         this.idRoom = idRoom;
         this.category = category;
@@ -25,11 +25,11 @@ public class Room {
         this.endDate = endDate;
     }
 
-    public boolean isStatus() {
+    public BooleanRoom isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(BooleanRoom status) {
         this.status = status;
     }
 
@@ -40,15 +40,29 @@ public class Room {
     public String getIdRoom() {
         return idRoom;
     }
-
+    public long date() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date1 = null;
+        Date date2 = null;
+        long date = 0;
+        try {
+            date1 = simpleDateFormat.parse(startDate);
+            date2 = simpleDateFormat.parse(endDate);
+            long millis = date2.getTime() - date1.getTime();
+            date = (millis / (24 * 60 * 60 * 1000) + 1);
+        } catch (ParseException e) {
+            System.out.println("Error!!!");
+        }
+        return date;
+    }
     public void setIdRoom(String idRoom) {
         this.idRoom = idRoom;
     }
     public int getPriceRoom() {
         if (category.equals("A")){
-            return  PRICE_A;
+            return Integer.parseInt( String.valueOf(PRICE_A*date()));
         }else {
-            return PRICE_B;
+            return Integer.parseInt( String.valueOf(PRICE_B*date()));
         }
     }
     public String getStartDate() {
@@ -67,35 +81,15 @@ public class Room {
         this.endDate = endDate;
     }
 
-    public long date() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date1 = null;
-        Date date2 = null;
-        long date = 0;
-        try {
-            date1 = simpleDateFormat.parse(startDate);
-            date2 = simpleDateFormat.parse(endDate);
-            long millis = date2.getTime() - date1.getTime();
-            date = (millis / (24 * 60 * 60 * 1000) + 1);
-        } catch (ParseException e) {
-            System.out.println("Error!!!");
-        }
-        return date;
-    }
-    public int rentFee() {
-        return (int) date() * getPrice();
+    public BooleanRoom getStatus() {
+        return status;
     }
 
+    public String getCategory() {
+        return category;
+    }
 
-
-
-    @Override
-    public String toString() {
-        return "Room{" +
-                "Trạng thái : " + status +
-                ", số phòng : " + idRoom +
-                ", số ngày thuê : "+date()+
-                ", tiền phòng : " + rentFee() +
-                '}';
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

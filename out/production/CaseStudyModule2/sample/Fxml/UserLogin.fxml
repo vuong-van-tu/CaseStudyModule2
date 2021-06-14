@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ControllerLogin">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.UserLogin">
    <left>
       <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #50C3F7;" BorderPane.alignment="CENTER">
          <children>
@@ -26,8 +26,8 @@
    <center>
       <AnchorPane prefHeight="500.0" prefWidth="408.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="130.0" layoutY="259.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
-            <PasswordField layoutX="130.0" layoutY="302.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="ipname" layoutX="130.0" layoutY="259.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="ippassword" layoutX="130.0" layoutY="302.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
             <FontAwesomeIcon fill="#2191e7" glyphName="USER" layoutX="88.0" layoutY="283.0" size="20px" wrappingWidth="11.028547286987305" />
             <FontAwesomeIcon fill="#239aea" glyphName="KEY" layoutX="89.0" layoutY="327.0" size="20px" text="" />
             <FontAwesomeIcon fill="#55bcf7" glyphName="USERS" layoutX="162.0" layoutY="103.0" size="40" text="" />
@@ -36,7 +36,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="login" layoutX="142.0" layoutY="362.0" mnemonicParsing="false" onAction="#getLogin" prefHeight="14.0" prefWidth="73.0" style="-fx-background-color: #0598ff;" text="Login" textFill="WHITE">
+            <Button fx:id="login" layoutX="86.0" layoutY="362.0" mnemonicParsing="false" onAction="#getLogin" prefHeight="14.0" prefWidth="73.0" style="-fx-background-color: #0598ff;" text="Login" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
@@ -47,6 +47,11 @@
                </graphic>
             </Button>
             <Hyperlink layoutX="112.0" layoutY="459.0" prefHeight="26.0" prefWidth="141.0" text="Forgot your password ?" />
+            <Button layoutX="183.0" layoutY="362.0" mnemonicParsing="false" onAction="#setUser" style="-fx-background-color: #0598ff;" text="Register" textFill="#f2f2f2">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>
