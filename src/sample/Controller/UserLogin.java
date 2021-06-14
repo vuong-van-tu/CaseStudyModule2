@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import sample.FileIO.ReadFileAccount;
 import sample.Service.Account;
 
 import java.io.IOException;
@@ -31,6 +32,7 @@ public class UserLogin implements Initializable {
     @FXML
     TextField ippassword;
     RegisterUser register = new RegisterUser();
+
     public void setUser(ActionEvent event) throws IOException {
         Stage stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader1 = new FXMLLoader();
@@ -39,24 +41,23 @@ public class UserLogin implements Initializable {
         Scene scene1 = new Scene(scene);
         stage1.setScene(scene1);
     }
+
     public void getLogin(ActionEvent event) throws IOException {
-//        System.out.println(list);
-//        for (Account accounts:list) {
-//            if (String.valueOf(ipname.getText()).equals(accounts.getUsername())&&String.valueOf(ippassword.getText()).equals(accounts.getPassword())){
-               if (ipname.getText().equals("admin")&&ippassword.getText().equals("admin123")){
-                Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader =new FXMLLoader(getClass().getResource("../Fxml/manageroom.fxml"));
+        ObservableList<Account> list = ReadFileAccount.readAccountCSVFile("D:\\CaseStudyModule2\\src\\sample\\account.csv");
+        for (Account accounts : list) {
+            if (String.valueOf(ipname.getText()).equals(accounts.getUsername()) && String.valueOf(ippassword.getText()).equals(accounts.getPassword())) {
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/manageroom.fxml"));
                 Pane myPane = (Pane) loader.load();
                 Scene scene = new Scene(myPane);
                 stage.setScene(scene);
-            }else {
+            } else if (!String.valueOf(ipname.getText()).equals(accounts.getUsername()) && !String.valueOf(ippassword.getText()).equals(accounts.getPassword())){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setHeaderText("Sai password!");
                 alert.show();
             }
-//        }
+        }
     }
-
 
 
     @Override

@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import sample.FileIO.WriteFile;
+import sample.FileIO.WriteFileAccount;
 import sample.Service.Account;
 
 
@@ -30,15 +32,17 @@ public class RegisterUser implements Initializable {
     TextField regispass;
     @FXML
     TextField regispass1;
-    List<Account> listAccounts = new ArrayList<>();
+    ObservableList<Account> listAccounts = FXCollections.observableArrayList();
 
-    public void registerUser() {
+    public void registerUser() throws IOException {
         if (regispass.getText().equals(regispass1.getText())){
             listAccounts.add(new Account(String.valueOf(regisname.getText()),String.valueOf(regispass.getText())));
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Đăng kí thành công");
             alert.show();
-            System.out.println(listAccounts);
+            WriteFileAccount.writeFileAccount("D:\\CaseStudyModule2\\src\\sample\\account.csv",listAccounts);
+//            WriteFile.writeFileCustomer("D:\\CaseStudyModule2\\src\\sample\\account.csv",listAccounts);
+//            System.out.println(listAccounts);
         }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Mật khẩu không trùng khớp");

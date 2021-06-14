@@ -81,7 +81,7 @@ public class ControllerCustomer implements Initializable {
 
     public ControllerCustomer() {
         try {
-            listCus = ReadFile.readAccountCSVFile("D:\\CaseStudyModule2\\src\\sample\\file.csv");
+            listCus = ReadFile.readAccountCSVFile("D:\\CaseStudyModule2\\src\\sample\\fileroom1.csv");
         } catch (IOException e) {
             listCus =FXCollections.observableArrayList() ;
         }
@@ -138,10 +138,10 @@ public class ControllerCustomer implements Initializable {
 
     public void back(ActionEvent event) throws IOException {
         Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader loader =new FXMLLoader(getClass().getResource("../Fxml/manageroom.fxml"));
+        FXMLLoader loader =new FXMLLoader(getClass().getResource("../Fxml/manageroom1.fxml"));
         Pane myPane = (Pane) loader.load();
         Scene scene = new Scene(myPane);
         stage.setScene(scene);
-        WriteFile.writeFileCustomer("D:\\CaseStudyModule2\\src\\sample\\file.csv",listCus);
+        WriteFile.writeFileCustomer("D:\\CaseStudyModule2\\src\\sample\\fileroom1.csv",listCus);
     }
 }

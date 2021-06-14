@@ -2,6 +2,7 @@ package sample.Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -49,7 +50,7 @@ public class ControllerRoom implements Initializable {
         button1.setOnAction(event -> {
             if (!status.getText().equals("Trống")){
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustom.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/managecustomroom1.fxml"));
                 Pane myPane = null;
                 try {
                     myPane = (Pane) loader.load();
@@ -128,4 +129,11 @@ public class ControllerRoom implements Initializable {
     }
 
 
+    public void back(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/UserLogin.fxml"));
+        Pane myPane = (Pane) loader.load();
+        Scene scene = new Scene(myPane);
+        stage.setScene(scene);
+    }
 }
