@@ -4,10 +4,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ControllerRoom">
    <children>
-      <TableView fx:id="tableRoom" prefHeight="800.0" prefWidth="1000.0">
+      <TableView fx:id="tableRoom" prefHeight="800.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0">
         <columns>
           <TableColumn text=" " />
           <TableColumn fx:id="status" prefWidth="150.0" text="Trạng thái" />
@@ -15,7 +14,8 @@
             <TableColumn fx:id="category" prefWidth="150.0" text="Loại phòng" />
             <TableColumn fx:id="startDate" prefWidth="150.0" text="Ngày bắt đầu thuê" />
             <TableColumn fx:id="endDate" prefWidth="150.0" text="Ngày trả phòng" />
-            <TableColumn fx:id="price" prefWidth="167.2000732421875" text="Giá phòng" />
+            <TableColumn fx:id="price" prefWidth="89.60009765625" text="Tiền phòng" />
+            <TableColumn fx:id="action" prefWidth="99.199951171875" text="Action" />
         </columns>
       </TableView>
    </children>

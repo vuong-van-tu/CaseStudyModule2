@@ -46,7 +46,7 @@ public class UserLogin implements Initializable {
 //            if (String.valueOf(ipname.getText()).equals(accounts.getUsername())&&String.valueOf(ippassword.getText()).equals(accounts.getPassword())){
                if (ipname.getText().equals("admin")&&ippassword.getText().equals("admin123")){
                 Stage stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
-                FXMLLoader loader =new FXMLLoader(getClass().getResource("../Fxml/managecustom.fxml"));
+                FXMLLoader loader =new FXMLLoader(getClass().getResource("../Fxml/manageroom.fxml"));
                 Pane myPane = (Pane) loader.load();
                 Scene scene = new Scene(myPane);
                 stage.setScene(scene);

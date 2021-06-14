@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Fxml/manageroom.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Fxml/UserLogin.fxml"));
         primaryStage.setTitle("Quản lí khách sạn");
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.show();
